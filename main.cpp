@@ -1,10 +1,13 @@
 #include <iostream>
 #include<vector>
 #include<map>
-#include"circleMoveSum.h"
+#include<string>
+#include"ReverseOrderNumber.h"
 using namespace std;
 
 int main(){
-    int res = circleMoveSum();
-    return res;
+    long long n;
+    cin >> n;
+    string res = inverseNumber(n);
+    cout << res << endl;
 }

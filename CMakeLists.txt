@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp mapSubstraction.h circleMoveSum.h)
+add_executable(untitled main.cpp mapSubstraction.h circleMoveSum.h removeCharMakePalindrome.h LongestCommonSubsequence.h moveUpperCaseToLast.h numMinMaxDifference.h RecurExample.h ReverseOrderNumber.h)
