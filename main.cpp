@@ -2,12 +2,12 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"ReverseOrderNumber.h"
+#include"numberOfSpecificPairs.h"
 using namespace std;
 
 int main(){
+    int k;
     long long n;
-    cin >> n;
-    string res = inverseNumber(n);
-    cout << res << endl;
+    cin >> n >> k;
+    cout << numberOfPairs(n, k) << endl;
 }
