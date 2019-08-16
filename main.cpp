@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"harvest.h"
+#include"tidyTheRoom.h"
 using namespace std;
 
 int main(){
-    harvest();
+    tidyTheRoom();
     return 0;
 }
