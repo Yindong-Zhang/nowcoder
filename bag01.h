@@ -39,39 +39,26 @@
 #include<vector>
 #include<iostream>
 // 递归dp 内存超出，dfs 还是 dp
+// dfs 超时， 记忆化搜索？
 // TODO:
 using namespace std;
-int recursive_dp(int i, int cap, const vector<int> &weights, vector<vector<int>> &dp){
-    if(dp[i][cap] != -1){
-        cout << i << ' ' << cap << ' ' << dp[i][cap] << endl;
-        return dp[i][cap];
+int recursive_dp(int i, int cap, const vector<int> &weights){
+    if(i == 0 or cap == 0){
+        return 1;
     }
     int num;
     if(cap > weights[i - 1]){
-        num = recursive_dp(i - 1, cap - weights[i - 1], weights, dp) + recursive_dp(i - 1, cap, weights, dp);
+        num = recursive_dp(i - 1, cap - weights[i - 1], weights) + recursive_dp(i - 1, cap, weights);
     }
     else{
-        num = recursive_dp(i - 1, cap, weights, dp);
+        num = recursive_dp(i - 1, cap, weights);
     }
-    cout << i << ' ' << cap << ' ' << num << endl;
+//    cout << i << ' ' << cap << ' ' << num << endl;
     return num;
 }
 int solve(vector<int> weights, int cap){
     int num_items = weights.size();
-    vector<vector<int>> dp(num_items + 1, vector<int>(cap + 1, -1));
-    for(int i = 0; i < dp.size(); i++){
-        dp[i][0] = 1;
-    }
-    for(int j = 0; j < cap + 1; j++){
-        dp[0][j] = 1;
-    }
-//    for(int i = 0; i < dp.size(); i++){
-//        for(int j = 0; j < cap + 1; j++){
-//            cout << dp[i][j] << ' ';
-//        }
-//        cout << endl;
-//    }
-    return recursive_dp(num_items, cap, weights, dp);
+    return recursive_dp(num_items, cap, weights);
 }
 
 int numSolutionBag01(){

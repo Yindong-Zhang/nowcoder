@@ -2,9 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"bag01.h"
+#include"harvest.h"
 using namespace std;
 
 int main(){
-    numSolutionBag01();
+    harvest();
+    return 0;
 }
