@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"tidyTheRoom.h"
+#include"dictionaryOrder.h"
 using namespace std;
 
 int main(){
-    tidyTheRoom();
+    dictionaryOrder();
     return 0;
 }

@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp Tetris.h wakeup.h harvest.h tidyTheRoom.h)
+add_executable(untitled main.cpp Tetris.h wakeup.h harvest.h tidyTheRoom.h maxValueManipulatingThreeNumber.h unstableValue.h dictionaryOrder.h)
