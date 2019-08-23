@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"dictionaryOrder.h"
+#include"buildLego.h"
 using namespace std;
 
 int main(){
-    dictionaryOrder();
+    buildLego();
     return 0;
 }
