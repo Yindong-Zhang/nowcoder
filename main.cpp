@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"buildLego.h"
+#include"climbMountains.h"
 using namespace std;
 
 int main(){
-    buildLego();
+    climbMountains();
     return 0;
 }
