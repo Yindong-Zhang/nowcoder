@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"climbMountains.h"
+#include"charCount.h"
 using namespace std;
 
 int main(){
-    climbMountains();
+    countChar();
     return 0;
 }
