@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"charCount.h"
+#include"LongestPalindromeSubsequence.h"
 using namespace std;
 
 int main(){
-    countChar();
+    longestPalindromeSubsequence();
     return 0;
 }

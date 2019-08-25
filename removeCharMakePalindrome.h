@@ -4,7 +4,7 @@
 
 #ifndef UNTITLED_REMOVECHARMAKEPALINDROME_H
 #define UNTITLED_REMOVECHARMAKEPALINDROME_H
-#include"LongestCommonSubsequence.h"
+#include"longestCommonSubsequence.h"
 
 int deleteCharLengthPalindrome(string a){
     string rev_a;

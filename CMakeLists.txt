@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp maxMConsecutiveSum.h charCount.h)
+add_executable(untitled main.cpp maxMConsecutiveSum.h charCount.h stringSort.h LongestPalindromeSubsequence.h maxFont.h)
