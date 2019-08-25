@@ -57,6 +57,19 @@ latex自然是广大研究人员最喜欢使用的科研论文排版工具之一
 #include<cmath>
 using namespace std;
 // 50%....
+/*
+ * 用例:
+10 9 720 460
+100 200 300 400 500 600 700 800 50 10
+
+对应输出应该为:
+
+27
+
+你的输出为:
+
+28
+ */
 int f(int s, vector<int> a, int W, int P, int H){
     int sum = 0;
     for(int i = 0; i < a.size(); i++){
@@ -105,7 +118,7 @@ int maxFont(){
             cin >> ai;
             a.push_back(ai);
         }
-        cout << f(28, a, W, P, H) << ' ' << f(29, a, W, P, H) << endl;
+//        cout << f(28, a, W, P, H) << ' ' << f(29, a, W, P, H) << endl;
         cout << solve(a, P, H, W) << endl;
     };
     return 0;
