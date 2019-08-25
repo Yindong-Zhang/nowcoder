@@ -52,6 +52,63 @@ latex自然是广大研究人员最喜欢使用的科研论文排版工具之一
  */
 #ifndef UNTITLED_MAXFONT_H
 #define UNTITLED_MAXFONT_H
-// TODO:
-int solve()
+#include<vector>
+#include<iostream>
+#include<cmath>
+using namespace std;
+// 50%....
+int f(int s, vector<int> a, int W, int P, int H){
+    int sum = 0;
+    for(int i = 0; i < a.size(); i++){
+        sum += s * ceil(a[i] * s / float(W));
+    }
+    return sum - P * H;
+}
+
+int binary_search(vector<int> a, int W, int P, int H){
+    int left, right, mid;
+    int fmid, fmidp1;
+    left = 1;
+    right = W;
+
+    while(right > left){
+        mid = (left + right) / 2;
+        fmid = f(mid, a, W, P, H);
+        fmidp1 = f(mid + 1, a, W, P, H);
+        if(fmid <= 0 and fmidp1 > 0){
+            return mid;
+        }
+        else if (fmid > 0){
+            right = mid - 1;
+        }
+        else{
+            left = mid + 1;
+        }
+
+    }
+    cout << left << ' '  << right << endl;
+    return left;
+
+}
+int solve(vector<int> a, int P, int H, int W){
+    return binary_search(a, W, P, H);
+}
+
+int maxFont(){
+    int N, P, H, W;
+
+    vector<int> a;
+    int ai;
+    while(cin >> N >> P >> H >> W){
+        a.clear();
+        for(int i = 0; i < N; i++){
+            cin >> ai;
+            a.push_back(ai);
+        }
+        cout << f(28, a, W, P, H) << ' ' << f(29, a, W, P, H) << endl;
+        cout << solve(a, P, H, W) << endl;
+    };
+    return 0;
+
+}
 #endif //UNTITLED_MAXFONT_H

@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"LongestPalindromeSubsequence.h"
+#include"maxFont.h"
 using namespace std;
 
 int main(){
-    longestPalindromeSubsequence();
+    maxFont();
     return 0;
 }
