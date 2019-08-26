@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"game1024.h"
+#include"mergeSortedArray.h"
 using namespace std;
 
 int main(){
-    game1024();
+    mergeSortedArray();
     return 0;
 }
