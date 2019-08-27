@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"game1024.h"
+#include"stringMatch.h"
 using namespace std;
 
 int main(){
-    game1024();
+    stringMatch();
     return 0;
 }
