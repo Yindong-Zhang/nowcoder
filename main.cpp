@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"stringMatch.h"
+#include"StringRLECompression.h"
 using namespace std;
 
 int main(){
-    stringMatch();
+    stringCompression();
     return 0;
 }
