@@ -40,7 +40,7 @@ int manacher(string s){
         else{
             li = 1;
         }
-        while(ns[i + li] == ns[i - li]){
+        while(i + li < ns.size() and i - li >= 0 and ns[i + li] == ns[i - li]){
             li++;
         }
         l[i] = li;
