@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"StringRLECompression.h"
+#include"largestUnoverlapStringproduct.h"
 using namespace std;
 
 int main(){
-    stringCompression();
+    largestUnoverlapStringProduct();
     return 0;
 }
