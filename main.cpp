@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"largestUnoverlapStringproduct.h"
+#include"windPowerStation.h"
 using namespace std;
 
 int main(){
-    largestUnoverlapStringProduct();
+    windPowerStation();
     return 0;
 }
