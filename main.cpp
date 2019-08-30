@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"windPowerStation.h"
+#include"decimalRepresentation.h"
 using namespace std;
 
 int main(){
-    windPowerStation();
+    decimalRepresentation();
     return 0;
 }

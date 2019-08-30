@@ -1,7 +1,8 @@
 //
 // Created by yindong on 19-8-29.
 //
-
+// 01 背包
+// dp 填表法
 #ifndef UNTITLED_WINDPOWERSTATION_H
 #define UNTITLED_WINDPOWERSTATION_H
 #include<vector>
