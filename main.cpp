@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"decimalRepresentation.h"
+#include"stocksExchange.h"
 using namespace std;
 
 int main(){
-    decimalRepresentation();
+    stockExchange();
     return 0;
 }
