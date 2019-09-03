@@ -54,7 +54,6 @@ int solve(vector<int> prices){
 }
 int stockExchange(){
     string line;
-
     getline(cin, line);
     stringstream ss(line);
     int price;
