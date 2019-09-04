@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"catFood.h"
+#include"goodNumber.h"
 using namespace std;
 
 int main(){
-    lowestSpeed();
+    goodNumber();
     return 0;
 }
