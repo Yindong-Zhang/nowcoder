@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"goodNumber.h"
+#include"maxGroupNumbers.h"
 using namespace std;
 
 int main(){
-    goodNumber();
+    maxGroup();
     return 0;
 }
