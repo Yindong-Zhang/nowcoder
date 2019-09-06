@@ -49,6 +49,7 @@
 #include<vector>
 #include<algorithm>
 #include<iostream>
+#include<map>
 using namespace std;
 int exhaustive_solve(vector<int> &pref, uint l, uint r, int k){
     uint count = 0;
@@ -61,8 +62,20 @@ int exhaustive_solve(vector<int> &pref, uint l, uint r, int k){
 
 }
 
-// TODO:
-int solve()
+// 以空间换时间
+int solve(map<int, vector<uint>> &pref, uint l, uint r, int k){
+    vector<uint> inds;
+    auto ptr = pref.find(k);
+    if(ptr == pref.end()){
+        return 0;
+    }
+    else{
+        inds = ptr->second;
+        auto lptr = lower_bound(inds.begin(), inds.end(), l);
+        auto rptr = upper_bound(inds.begin(), inds.end(), r);
+        return rptr - lptr;
+    }
+}
 
 int preferenceQuery(){
     int n, q;
@@ -73,10 +86,20 @@ int preferenceQuery(){
     for(int i = 0; i < n; i++){
         cin >> pref[i];
     }
+    map<int, vector<uint>> inds_dict;
+    for(uint i = 0; i < n; i++){
+        auto ptr = inds_dict.find(pref[i]);
+        if(ptr == inds_dict.end()){
+            inds_dict.insert({pref[i], {i + 1, }});
+        }
+        else{
+            ptr->second.push_back(i + 1);
+        }
+    }
     cin >> q;
     for(int i = 0; i < q; i++){
         cin >> l >> r >> k;
-        cout << solve(pref, l, r, k) << endl;
+        cout << solve(inds_dict, l, r, k) << endl;
     }
     return 0;
 }
