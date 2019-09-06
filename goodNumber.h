@@ -40,7 +40,8 @@
 #include<cmath>
 #include<iostream>
 using namespace std;
-// TODO: 思路有问题
+// 思路有问题
+/*
 int solve(unsigned int n){
     if(n < 10){
         int sum = 0;
@@ -79,7 +80,40 @@ int solve(unsigned int n){
     }
     return sum;
 }
+*/
+// 思路简单：判断一个数是不是好数，必须有一位或一位以上的位是好数（2,5,6,9），然后其他位也必须是对称数（0,1,8）
+// 穷尽搜索，简单直接，不易出错
 
+bool isGood(int n){
+    string s = to_string(n);
+    int count = 0;
+    for(char ch: s){
+        if(ch == '0' or ch == '1' or ch == '8'){
+            continue;
+        }
+        else if(ch == '2' or ch == '5' or ch == '6' or ch == '9'){
+            count++;
+        }
+        else{
+            return false;
+        }
+    }
+    if(count >= 1){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+int solve(uint n){
+    int count = 0;
+    for(uint i = 1; i <= n; i++){
+        if(isGood(i)){
+            count++;
+        }
+    }
+    return count;
+}
 int goodNumber(){
     uint n;
     cin >> n;

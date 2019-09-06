@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"maxGroupNumbers.h"
+#include"userPreferenceQuery.h"
 using namespace std;
 
 int main(){
-    maxGroup();
+    preferenceQuery();
     return 0;
 }
