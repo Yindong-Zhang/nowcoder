@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"userPreferenceQuery.h"
+#include"bracelets.h"
 using namespace std;
 
 int main(){
-    preferenceQuery();
+    bracelets();
     return 0;
 }
