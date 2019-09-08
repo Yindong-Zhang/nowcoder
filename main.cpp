@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"test.h"
+#include"possibleCombination.h"
 using namespace std;
 
 int main(){
-    test();
+    possibleCombination();
     return 0;
 }
