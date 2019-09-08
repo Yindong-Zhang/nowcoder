@@ -13,6 +13,9 @@ void dfs(string &s, uint j, string &res){
         cout << res << endl;
         return;
     }
+    if(s[j] == '0'){
+        return;
+    }
     res.push_back(s[j] - '0' + 'A' - 1);
     dfs(s, j + 1, res);
     res.pop_back();
