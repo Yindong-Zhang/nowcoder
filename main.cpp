@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"bracelets.h"
+#include"test.h"
 using namespace std;
 
 int main(){
-    bracelets();
+    test();
     return 0;
 }
