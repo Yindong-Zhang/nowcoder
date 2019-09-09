@@ -33,13 +33,12 @@ abcbaa 2
 使2个字母a连续出现，至少需要3次操作。即把第1个位置上的a移动到第4个位置。
 所以在至多操作2次的情况下，最多只能使2个b或2个a连续出现。
  */
-#ifndef UNTITLED_MOVENUMBERSTOCONTINUOUS_H
-#define UNTITLED_MOVENUMBERSTOCONTINUOUS_H
+#ifndef UNTITLED_MOVECHARSTOCONTINUOUS_H
+#define UNTITLED_MOVECHARSTOCONTINUOUS_H
 #include<string>
 #include<vector>
 #include<iostream>
 using namespace std;
-// TODO:
 int solve(string s, int m){
     vector<vector<int>> inds(26, vector<int>());
     for(int i = 0; i < s.size(); i++){
@@ -47,7 +46,42 @@ int solve(string s, int m){
     }
     vector<vector<vector<int>>> dp(26);
     for(int i = 0; i < 26; i++){
+        int n =  inds[i].size();
+        if(n > 0){
+            vector<vector<int>> dpi(n, vector<int>(n , 0));
 
+            for(int k = 1; k < n; k++){
+                for(int left = 0; left < n - k; left++){
+                    int right = left + k;
+                    dpi[left][right] = dpi[left + 1][right - 1] + inds[i][right] - inds[i][left] - right + left;
+                }
+            }
+
+            dp[i] = dpi;
+        }
     }
+    int res = 0;
+    for(int i = 0; i < 26; i++){
+        int n = dp[i].size();
+        for(int row = 0; row < n; row++){
+            for(int col = row + 1; col < n; col++){
+               if(dp[i][row][col] <= m){
+                   if(col - row + 1 > res){
+                       res = col - row + 1;
+                   }
+               }
+            }
+
+        }
+    }
+    return res;
 }
-#endif //UNTITLED_MOVENUMBERSTOCONTINUOUS_H
+
+int moveChartoContinues(){
+    string s;
+    int m;
+    cin >> s >> m;
+    cout << solve(s, m) << endl;
+    return 0;
+}
+#endif //UNTITLED_MOVECHARSTOCONTINUOUS_H

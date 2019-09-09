@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"test.h"
+#include"moveCharsToContinuous.h"
 using namespace std;
 
 int main(){
-    test();
+    moveChartoContinues();
     return 0;
 }
