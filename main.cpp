@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"moveCharsToContinuous.h"
+#include"upperBound.h"
 using namespace std;
 
 int main(){
-    moveChartoContinues();
+    upperBound();
     return 0;
 }
