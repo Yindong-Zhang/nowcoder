@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"TreeMaxRouteLength.h"
+#include"ChangeOneNumberToLongestConsecutiveIncreasingSequence.h"
 using namespace std;
 
 int main(){
-    maxTreeRouteLength();
+    changeMaxConsecutiveSeq();
     return 0;
 }

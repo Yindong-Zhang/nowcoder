@@ -36,6 +36,18 @@
 #include<iostream>
 using namespace std;
 // 不完整，对于贪心中每步有多种最优解的情况
+//TODO:
+int dfs(int hs, int h0, int la, int lb, int i, vector<int> &a){
+    if(i == a.size()){
+        return res;
+    }
+    int p1 = hs + abs(a[i] - la), p2 = hs + abs(a[i] - lb);
+    if(p1 < p2 and p1 < h0){
+        h0 += abs(a[i] - a[i-1]);
+        return dfs(p1, h0, a[i], lb, i + 1, a);
+    }
+
+}
 int solve(vector<int> a){
     if(a.size() <= 2){
         return 0;
@@ -48,25 +60,25 @@ int solve(vector<int> a){
             hb = 0;
             la = a[i - 1];
             lb = a[i];
-            cout << "restart: ";
+//            cout << "restart: ";
         }
         else if (abs(a[i] - la) <= abs(a[i] - lb) and ha + hb + abs(a[i] - la) <= h0){
             ha = ha + abs(a[i] - la);
             la = a[i];
-            cout << "choose a: ";
+//            cout << "choose a: ";
         }
         else if( abs(a[i] - lb) <= abs(a[i] - la) and ha + hb + abs(a[i] - lb) <= h0){
             hb = hb + abs(a[i] - lb);
             lb = a[i];
-            cout << "choose b: ";
+//            cout << "choose b: ";
         }
-        cout << i << ' ' << la << ' ' << lb << ' ' << ha << ' ' << hb << endl;
+//        cout << i << ' ' << la << ' ' << lb << ' ' << ha << ' ' << hb << endl;
         h0 = h0 + abs(a[i] - a[i - 1]);
     }
     return ha + hb;
 }
 
-void chorusDifficulty(){
+int chorusDifficulty(){
     int n, tmp;
     vector<int> vec;
     cin >> n;
@@ -75,5 +87,6 @@ void chorusDifficulty(){
         vec.push_back(tmp);
     }
     cout << solve(vec) << endl;
+    return 0;
 }
 #endif //UNTITLED_CHORUSDIFFICULTY_H
