@@ -34,48 +34,53 @@
 #include<vector>
 #include<cmath>
 #include<iostream>
+#include<climits>
 using namespace std;
 // 不完整，对于贪心中每步有多种最优解的情况
+// 仍然有问题。。。。
 //TODO:
-int dfs(int hs, int h0, int la, int lb, int i, vector<int> &a){
+int dfs(int hs, int g0, int la, int lb, int i, vector<int> &a){
+    cout << hs << ' ' << g0 << ' ' << la << ' ' << lb << ' ' << i << endl;
     if(i == a.size()){
-        return res;
+        return hs;
     }
-    int p1 = hs + abs(a[i] - la), p2 = hs + abs(a[i] - lb);
-    if(p1 < p2 and p1 < h0){
-        h0 += abs(a[i] - a[i-1]);
-        return dfs(p1, h0, a[i], lb, i + 1, a);
+    int choice[3] = {hs + abs(a[i] - la), hs + abs(a[i] - lb), g0};
+    int cmin = INT_MAX;
+    vector<int> indMin;
+    for(int i = 0; i < 3; i++){
+        if(choice[i] < cmin){
+            cmin = choice[i];
+            indMin.clear();
+            indMin.push_back(i);
+        }
+        else if(choice[i] == cmin){
+            indMin.push_back(i);
+        }
     }
+
+    g0 += abs(a[i] - a[i-1]);
+    int res = INT_MAX;
+    for(int ind: indMin){
+        cout << ind << ' ';
+        if( ind == 0){
+            res = min(res, dfs(choice[0], g0, a[i], lb, i + 1, a));
+        }
+        else if(ind == 1){
+            res = min(res, dfs(choice[1], g0, la, a[i], i + 1, a));
+        }
+        else if(ind == 2){
+            res = min(res, dfs(choice[2], g0, a[i - 1], a[i], i + 1, a));
+        }
+    }
+    return res;
+
 
 }
 int solve(vector<int> a){
     if(a.size() <= 2){
         return 0;
     }
-    int la = a[0], lb = a[1];
-    int ha = 0, hb = 0, h0 = abs(a[1] - a[0]);
-    for(int i = 2; i< a.size(); i++){
-        if( h0 <= ha + hb + abs(a[i] - la) and h0 <= ha + hb + abs(a[i] - lb)){
-            ha = h0;
-            hb = 0;
-            la = a[i - 1];
-            lb = a[i];
-//            cout << "restart: ";
-        }
-        else if (abs(a[i] - la) <= abs(a[i] - lb) and ha + hb + abs(a[i] - la) <= h0){
-            ha = ha + abs(a[i] - la);
-            la = a[i];
-//            cout << "choose a: ";
-        }
-        else if( abs(a[i] - lb) <= abs(a[i] - la) and ha + hb + abs(a[i] - lb) <= h0){
-            hb = hb + abs(a[i] - lb);
-            lb = a[i];
-//            cout << "choose b: ";
-        }
-//        cout << i << ' ' << la << ' ' << lb << ' ' << ha << ' ' << hb << endl;
-        h0 = h0 + abs(a[i] - a[i - 1]);
-    }
-    return ha + hb;
+    return dfs(0, abs(a[1] - a[0]), a[0], a[1], 2, a);
 }
 
 int chorusDifficulty(){

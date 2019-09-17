@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"ChangeOneNumberToLongestConsecutiveIncreasingSequence.h"
+#include"chorusDifficulty.h"
 using namespace std;
 
 int main(){
-    changeMaxConsecutiveSeq();
+    chorusDifficulty();
     return 0;
 }
