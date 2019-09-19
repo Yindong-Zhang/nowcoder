@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"chorusDifficulty.h"
+#include"isomorphsim.h"
 using namespace std;
 
 int main(){
-    chorusDifficulty();
+    stringCompare();
     return 0;
 }
