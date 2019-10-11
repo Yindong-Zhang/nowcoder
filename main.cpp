@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"isomorphsim.h"
+#include"strangeLetters.h"
 using namespace std;
 
 int main(){
-    stringCompare();
+    strangeLetter();
     return 0;
 }
