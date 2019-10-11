@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"strangeLetters.h"
+#include"assetBags.h"
 using namespace std;
 
 int main(){
-    strangeLetter();
+    assetBag();
     return 0;
 }
