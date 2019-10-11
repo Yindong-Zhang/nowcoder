@@ -32,7 +32,7 @@
  */
 #ifndef UNTITLED_ASSETBAGS_H
 #define UNTITLED_ASSETBAGS_H
-
+// 一道经典01背包问题，填表法
 #include<vector>
 #include<iostream>
 #include<algorithm>
@@ -65,13 +65,14 @@ int assetBag(){
     for(int i = 0; i < n; i++){
         cin >> counts[i];
     }
+    cin.get();
     for(int i = 0; i < n; i++){
         cin >> values[i];
     }
-    for(int i = 0; i < n; i++){
-        cout << counts[i] << ' ';
-    }
-    cout << endl;
+//    for(int i = 0; i < n; i++){
+//        cout << counts[i] << ' ';
+//    }
+//    cout << endl;
     cout << solve(capacity, counts, values);
     return 0;
 }
