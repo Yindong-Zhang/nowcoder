@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"assetBags.h"
+#include"flipflip.h"
 using namespace std;
 
 int main(){
-    assetBag();
+    flipflip();
     return 0;
 }
