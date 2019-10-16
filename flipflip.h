@@ -44,8 +44,20 @@ int solve(int m, int n){
 }
 */
 
+int project(int n){
+    if(n == 1){
+        return 1;
+    }
+    else{
+        return n - 2;
+    }
+}
 int solve(int m, int n){
 //    TODO:
+    int nrows, ncols;
+    if(m == 1){
+
+    }
 }
 
 int flipflip(){
