@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"flipflip.h"
+#include"minEditLength.h"
 using namespace std;
 
 int main(){
-    flipflip();
+    minEditLength();
     return 0;
 }
