@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"minEditLength.h"
+#include"longestUnrepeatedSubstring.h"
 using namespace std;
 
 int main(){
-    minEditLength();
+    longestUnrepeatedSubstring();
     return 0;
 }
