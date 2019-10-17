@@ -24,14 +24,13 @@ pwwkew
 #include<iostream>
 #include<map>
 using  namespace std;
-// TODO: debug
 int solve(string s){
     int ind_start = 0;
     map<char, int> inds_dict;
     int res = 0;
     for(int i = 0; i < s.size(); i++){
         char ch = s[i];
-        if(inds_dict.find(ch) != inds_dict.end() and inds_dict[ch] > ind_start){
+        if(inds_dict.find(ch) != inds_dict.end() and inds_dict[ch] >= ind_start){
             ind_start = inds_dict[ch] + 1;
         }
         inds_dict[ch] = i;
