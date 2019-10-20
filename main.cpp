@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"longestUnrepeatedSubstring.h"
+#include"chooseGoodPhoneNumbers.h"
 using namespace std;
 
 int main(){
-    longestUnrepeatedSubstring();
+    chooseGoodNumbers();
     return 0;
 }
