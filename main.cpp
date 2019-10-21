@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"chooseGoodPhoneNumbers.h"
+#include"isBipartitleGraph.h"
 using namespace std;
 
 int main(){
-    chooseGoodNumbers();
+    isBipartitleGraph();
     return 0;
 }
