@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"isBipartitleGraph.h"
+#include"manacher.h"
 using namespace std;
 
 int main(){
-    isBipartitleGraph();
+    longestPalindromSubstring();
     return 0;
 }
