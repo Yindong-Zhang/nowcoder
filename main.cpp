@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"manacher.h"
+#include"sequencePatternMatch.h"
 using namespace std;
 
 int main(){
-    longestPalindromSubstring();
+    sequencePatternMatch();
     return 0;
 }
