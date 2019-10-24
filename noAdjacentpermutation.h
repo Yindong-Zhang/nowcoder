@@ -25,14 +25,60 @@
 #define UNTITLED_NOADJACENTPERMUTATION_H
 #include<vector>
 #include<iostream>
+#include<cmath>
 #include<algorithm>
 using namespace std;
 
+int first_max(vector<int> array){
+    int max_ind = 0, max_value = array[0];
+    for(int i = 1; i < array.size(); i++){
+        if(array[i] > max_value){
+            max_ind = i;
+            max_value = array[i];
+        }
+    }
+    return max_ind;
+}
 
-vector<int> solve(vector<int> a, int M){
-    auto maxPtr = max_element(a.begin(), a.end());
-    auto lastPtr = a.end();
-    if()
+void solve(vector<int> a, int M){
+    if(first_max(a) > ceil(M / 2)){
+        cout << "-1";
+    }
+    else{
+        vector<int> res;
+        int last_ind = a.size();
+        int left = M;
+        for(int i = 0; i < M; i++){
+            int max_ind = first_max(a);
+            int ind = 0;
+            if(a[max_ind] < ceil( (left - 1) / 2 ) ){
+                for(;a[ind] = 0 or ind == last_ind and ind < a.size(); ind++);
+            }
+            else{
+//
+                ind = max_ind;
+            }
+            a[ind]--;
+            res.push_back(ind);
+            left--;
+            last_ind = ind;
+        }
+        for(int i = 0; i < M; i++){
+            cout << res[i] << ' ';
+        }
+    }
 
+}
+int noAdjacentPermuatation(){
+    int N;
+    cin >> N;
+    vector<int> a(N);
+    int M = 0;
+    for(int i = 0; i < N; i++){
+        cin >> a[i];
+        M = M + a[i];
+    }
+    solve(a, M);
+    return 0;
 }
 #endif //UNTITLED_NOADJACENTPERMUTATION_H

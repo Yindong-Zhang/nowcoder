@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"sequencePatternMatch.h"
+#include"noAdjacentpermutation.h"
 using namespace std;
 
 int main(){
-    sequencePatternMatch();
+    noAdjacentPermuatation();
     return 0;
 }
