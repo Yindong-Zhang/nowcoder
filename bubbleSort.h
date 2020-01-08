@@ -43,6 +43,7 @@
 #include<iostream>
 #include<vector>
 using namespace std;
+/*
 int solve(vector<long> H){
     int count = 0;
     for(int i = 0; i < H.size(); i++){
@@ -58,6 +59,19 @@ int solve(vector<long> H){
         }
         if(isSorted){
             break;
+        }
+    }
+    return count;
+}
+*/
+
+int solve(vector<long> H ){
+    int count = 0;
+    for(int i = 0; i < H.size(); i++){
+        for(int j = i + 1; j < H.size(); j++){
+            if( H[i] > H[j]){
+                count++;
+            }
         }
     }
     return count;
