@@ -56,6 +56,23 @@ int recursive_dp(int i, int cap, const vector<int> &weights){
 //    cout << i << ' ' << cap << ' ' << num << endl;
     return num;
 }
+
+int dp(vector<int> weights, vector<int> caps, int capacity){
+    int n = weights.size();
+    vector<vector<int>> dp(n + 1, vector<int>(capacity + 1, 0));
+    for(int i = 1; i <= n; i++){
+        for(int l = 1; l <= capacity; l++){
+            if( l < caps[i]){
+                dp[i][l] = dp[i - 1][l];
+            }
+            else{
+                dp[i][l] = max(dp[i - 1][l], dp[i - 1][l - l[i]] + weights[i])
+            }
+        }
+    }
+    return dp[n][capacity];
+
+}
 int solve(vector<int> weights, int cap){
     int num_items = weights.size();
     return recursive_dp(num_items, cap, weights);
