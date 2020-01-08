@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"mergeSortedArray.h"
+#include"bubbleSort.h"
 using namespace std;
 
 int main(){
-    mergeSortedArray();
+    bubbleSort();
     return 0;
 }
