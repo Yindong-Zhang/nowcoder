@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"bubbleSort.h"
+#include"minStepsToDestination.h"
 using namespace std;
 
 int main(){
-    bubbleSort();
+    minStepsToDestination();
     return 0;
 }
