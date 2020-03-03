@@ -2,10 +2,11 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"minStepsToDestination.h"
+#include"kthLargestCombination.h"
 using namespace std;
 
 int main(){
-    minStepsToDestination();
+    int n = 10;
+    cout << kthLargestCombination() << endl;
     return 0;
 }
