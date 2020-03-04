@@ -46,6 +46,74 @@
 #include<functional>
 using namespace std;
 // 通过 20%。。。，想法没问题，应该可以改进。
+/* 复制下别人改进的代码，在查找的同时不仅计算k，还计算>= query的最小值，
+ * 甚至还记录最小值有几个，从而判断有多个最小值的情况。。。
+ * #include <bits/stdc++.h>
+using namespace std;
+long long check(vector<long long>& att, long long& mid, long long k, long long n)
+{
+    long long below = 0;
+    long long num = 0;
+    long long same_p = 0;
+    long long min_val = att[n - 1] * att[n - 1] * 2;
+    for (long long i = 0; i < n; i++)
+    {
+        long long pos = upper_bound(att.begin() + i + 1, att.end(), mid / att[i]) - att.begin();
+        num += att.size() - pos;
+        if (pos == att.size())
+            continue;
+        long long minu = att[pos] * att[i] - mid;
+        if (minu < min_val)
+        {
+            min_val = minu;
+            below = att[pos] * att[i];
+            same_p = 0;
+        }
+        if(minu == min_val)
+            same_p++;
+    }
+    if(k == num || (num > k && num-same_p < k))
+    {
+        mid = below;
+        num = k;
+    }
+    return num;
+}
+
+int main() {
+    long long n,k;
+    vector<long long> att;
+    scanf("%lld %lld", &n, &k);
+    long long tmp;
+    for (long long i = 0; i < n; i++)
+    {
+        scanf("%lld", &tmp);
+        att.push_back(tmp);
+    }
+    sort(att.begin(), att.end());
+    long long lo = att[0] * att[1];
+    long long hi = att[n - 1] * att[n - 2];
+    long long ans;
+    while (lo <= hi)
+    {
+        long long mid = (lo + hi) >> 1;
+        long long num = check(att, mid, k, n);
+        if (num == k)
+        {
+            ans = mid;
+            break;
+        }
+        if (num > k)
+        {
+            lo = mid + 1;
+        }
+        else
+            hi = mid - 1;
+    }
+    printf("%lld\n", ans);
+    return 0;
+}
+ */
 int fcount(vector<int> &nums, int query){
     // nums 升序排列
     int i = 0, j = nums.size() - 1;
