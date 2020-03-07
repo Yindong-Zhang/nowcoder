@@ -52,7 +52,7 @@ int partition_2(vector<T> &nums, int l, int r){
         cout << i << ' ' << j << ' ';
         printVector(nums);
     }
-    nums[i-1] = pivot;
+    nums[i-1] = pivot; // 弄清楚概念，i为当前需要判断的数位，i - 1为需要填充的数位
     return i - 1;
 }
 
