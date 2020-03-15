@@ -3,10 +3,10 @@
 #include<map>
 #include<string>
 #include"printVector.h"
-#include"regexSubstringMatch.h"
+#include"test.h"
 using namespace std;
 
 int main(){
-    regexSubstringMatch();
+    test();
     return 0;
 }

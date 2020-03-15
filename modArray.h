@@ -26,7 +26,7 @@ int solve(int n, int k, int l, int r){
             g[i] = b - a - 1;
         }
     }
-    vector<vector<int>> dp(n, vector<int>(k, 0));
+    vector<vector<int>> dp(2, vector<int>(k, 0));
     for(int ki = 0; ki < k; ++ki){
         dp[0][ki] = g[ki];
     }
@@ -34,12 +34,12 @@ int solve(int n, int k, int l, int r){
         for(int ki = 0; ki < k; ++ki){
             for(int j = 0; j < k; ++j){
                 for(int w = 0; w < g[(ki - j) % k]; ++w){
-                    dp[ni][ki] = (dp[ni][ki] + dp[ni - 1][j] ) % M;
+                    dp[ni % 2][ki] = (dp[ni % 2][ki] + dp[(ni - 1) % 2][j] ) % M;
                 }
             }
         }
     }
-    return dp[n-1][0];
+    return dp[(n-1) % 2][0];
 }
 
 int main(){
