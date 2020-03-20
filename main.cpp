@@ -3,10 +3,10 @@
 #include<map>
 #include<string>
 #include"printVector.h"
-#include"chooseWhichGold.h"
+#include"runingProject.h"
 using namespace std;
 
 int main(){
-    chooseWhichGold();
+    runningProject();
     return 0;
 }

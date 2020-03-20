@@ -5,7 +5,6 @@
 #ifndef UNTITLED_SHORTESTPATH_H
 #define UNTITLED_SHORTESTPATH_H
 #include<bits/stdc++.h>
-#include<assert.h>
 #define MAX 0x3f3f3f3f // inf + inf = inf, inf + k = inf
 using namespace std;
 
@@ -34,10 +33,65 @@ bool bellman_ford(vector<Edge> E, vector<int> &dist){
     return true;
 }
 
-void dijstra(vector<Edge> E, vector<int> &dist){
 
+void dijstra(vector<vector<Edge>> &E, vector<int> &dist, int n, int s){
+    // dist array should be initial distance array, in which souce point distance = 0, and the rest = inf
+    /*
+     * s: start point ind;
+     * E: node mapped edge list
+     * n: number of nodes
+     */
+    vector<bool> is_ready(n, false);
+    for(int i = 0; i < n; ++i){
+        int min_dist= INT_MAX, min_ind = -1;
+        for(int i = 0; i < n; ++i){
+            if(not is_ready[i] and dist[i] < min_dist){
+                min_dist = dist[i];
+                min_ind = i;
+            }
+        }
+        is_ready[min_ind] = true;
+        // 接下来进行松弛
+        for(Edge &e: E[min_ind]){
+            if(dist[e.v] > dist[e.u] + e.cost){
+                dist[e.v] = dist[e.u] + e.cost;
+            }
+        }
+    }
 }
 
+struct D{
+    int ind, dist;
+    bool operator <(const D& a, const D& b) const {
+        return a.dist < b.dist;
+    }
+};
+void priorityQueueDijstra(vector<vector<Edge>> &E, vector<int> &dist, int n, int s){
+    // dist array should be initial distance array, in which souce point distance = 0, and the rest = inf
+    /*
+     * s: start point ind;
+     * E: node mapped edge list
+     * n: number of nodes
+     */
+    priority_queue<D> q;
+    vector<bool> visited(n, false);
+    q.push({s, 0});
+    while(not q.empty()){
+        auto record = q.top();
+        q.pop();
+        if(visited[record.ind]){
+            continue;
+        }
+        dist[record.ind] = record.dist;
+        visited[record.ind] = true;
+        for(Edge &e: E[record.ind]){ // 松弛操作
+            if(dist[e.v] > dist[e.u] + e.cost){
+                dist[e.v] = dist[e.u] + e.cost;
+                q.push({e.v, dist[e.v]});
+            }
+        }
+    }
+}
 
 // 多源最短路，floyd算法
 
