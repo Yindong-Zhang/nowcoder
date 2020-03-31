@@ -2,11 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"printVector.h"
-#include"runingProject.h"
+#include"handleBar.h"
 using namespace std;
 
 int main(){
-    runningProject();
+    handleBar();
     return 0;
 }
