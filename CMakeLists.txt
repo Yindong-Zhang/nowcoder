@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp colorSockets.h handleBar.h)
+add_executable(untitled main.cpp colorSockets.h handleBar.h subStringNumber.h GapOverlap.h seatCombination.h minHurt.h reachPoints.h Adaboost.h gamePossibleCombination.h simulSQL.h)

@@ -2,10 +2,10 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"handleBar.h"
+#include"simulSQL.h"
 using namespace std;
 
 int main(){
-    handleBar();
+    popularity();
     return 0;
 }
