@@ -56,7 +56,7 @@ int solve(vector<vector<int>> &E, vector<int> inCount, int N){
 struct Pair{
     int a, b;
 };
-int main(){
+int handleBar(){
     int T,n;
     cin >> T;
     int a, b;
