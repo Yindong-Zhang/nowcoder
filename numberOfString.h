@@ -38,7 +38,7 @@ int solve(string &s1, string &s2, int l1, int l2){
         res = ( res * 4 ) % N;
         
     }
-    for(int i0 = i + 1; i0 < s.size(); ++i0){
+    for(int i0 = i + 1; i0 < s1.size(); ++i0){
         
     }
 }

@@ -2,10 +2,11 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"handleBar.h"
+#include"removeBallinBoxes.h"
 using namespace std;
 
 int main(){
-    handleBar();
+    removeBallinBoxes();
+    system("pause");
     return 0;
 }
