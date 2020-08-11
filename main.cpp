@@ -2,7 +2,7 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"jindong-1.h"
+#include"SieveExpectation.h"
 #include"printVector.h"
 using namespace std;
 
@@ -18,6 +18,6 @@ int main(){
 //        printVector(vec);
 //    }
 
-    jindong1();
+    sieveExpectation();
     return 0;
 }
