@@ -2,7 +2,7 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"fibMod3.h"
+#include"jindong-1.h"
 #include"printVector.h"
 using namespace std;
 
@@ -17,6 +17,7 @@ int main(){
 //    for(auto vec : pUsed){
 //        printVector(vec);
 //    }
-    fibmod3();
+
+    jindong1();
     return 0;
 }
