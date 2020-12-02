@@ -2,7 +2,7 @@
 #include<vector>
 #include<map>
 #include<string>
-#include"SieveExpectation.h"
+#include"unRepeatedSubstring.h"
 #include"printVector.h"
 using namespace std;
 
@@ -17,7 +17,7 @@ int main(){
 //    for(auto vec : pUsed){
 //        printVector(vec);
 //    }
-
-    sieveExpectation();
+    unRepeatedSubstring();
+//    cout << gcd(11, 3) << endl;
     return 0;
 }
